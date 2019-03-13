@@ -8,7 +8,9 @@
       span.status.true { background: green; color: green}
       span.false.false { background: red; color: red}
     </style>
+      <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body>
     <% if !flash[:notice].blank?%>
       <div class="notice">
         <%= flash[:notice]%>
