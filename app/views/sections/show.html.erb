@@ -17,7 +17,7 @@
     </tr>
     <tr>
       <th>Visible?</th>
-      <td><%= @section.visible ? 'Yes' : 'No' %></td>
+      <td><%= status_tag(@subject.visible) %></td>
     </tr>
     <tr>
       <th>Content Type</th>
@@ -29,11 +29,11 @@
     </tr>
     <tr>
       <th>Created</th>
-      <td><%= @section.created_at %></td>
+      <td><%= @section.created_at.to_s(:long) %></td>
     </tr>
     <tr>
       <th>Updated</th>
-      <td><%= @section.updated_at %></td>
+      <td><%= @section.updated_at.to_s(:long) %></td>
     </tr>
   </table>
 </div>
