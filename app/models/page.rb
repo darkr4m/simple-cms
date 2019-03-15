@@ -8,5 +8,8 @@ class Page < ApplicationRecord
   scope :sorted_asc, lambda { order(:position => :asc) }
   scope :newest_first, lambda { where(:created_at => :desc) }
   scope :search, lambda { |query| where(["name LIKE ?", "%#{query}%"]) }
-  validates_presence_of :name
+
+  validates :name, :presence => true, :length => {:within => 3..50}
+  validates :permalink, :presence => true, :length => {:within => 3..50}, :uniqueness => true
+
 end

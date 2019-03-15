@@ -8,5 +8,5 @@ class Subject < ApplicationRecord
   scope :newest_first, lambda { where(:created_at => :desc) }
   scope :search, lambda { |query| where(["name LIKE ?", "%#{query}%"]) }
 
-  validates_presence_of :name
+  validates :name, :presence => true, :length => {:maximum => 25}
 end
