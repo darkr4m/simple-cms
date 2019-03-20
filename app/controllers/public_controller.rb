@@ -1,6 +1,8 @@
 class PublicController < ApplicationController
 
   layout 'public'
+
+  before_action :setup_navigation
   def index
     #intro text
   end
@@ -11,4 +13,11 @@ class PublicController < ApplicationController
       redirect_to(root_path)
     end
   end
+
+  private
+
+  def setup_navigation
+    @subjects = Subject.visible.sorted_asc
+  end
+
 end
