@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_222443) do
+ActiveRecord::Schema.define(version: 2019_03_16_025304) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "first_name", limit: 25
     t.string "last_name", limit: 25
     t.string "email", limit: 50
     t.string "username", limit: 25, null: false
-    t.string "hashed_password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "admin_users_pages", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
