@@ -1,4 +1,7 @@
 class Subject < ApplicationRecord
+
+  acts_as_list
+
   has_many :pages
 
   # this is where you will place scoped methods for your model
