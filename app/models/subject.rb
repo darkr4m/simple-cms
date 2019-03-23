@@ -12,4 +12,5 @@ class Subject < ApplicationRecord
   scope :search, lambda { |query| where(["name LIKE ?", "%#{query}%"]) }
 
   validates :name, :presence => true, :length => {:maximum => 25}
+
 end

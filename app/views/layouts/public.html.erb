@@ -7,13 +7,21 @@
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div id="main">
-      <div id="navigation">
-        <%= render(:partial => 'layouts/navigation', :locals => { :subjects => @subjects }) %>
-      </div>
-      <div id="content">
-        <%= yield %>
+    <%= render(:partial => 'layouts/header')%>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 col-12">
+          <div id="sidenav">
+            <%= render(:partial => 'layouts/navigation', :locals => { :subjects => @subjects }) %>
+          </div>
+        </div>
+        <div class="col-sm-8 col-12">
+          <div id="content">
+            <%= yield %>
+          </div>
+        </div>
       </div>
     </div>
+    <%= render(:partial => 'layouts/footer')%>
   </body>
 </html>

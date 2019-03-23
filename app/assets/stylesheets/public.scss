@@ -1,3 +1,32 @@
 // Place all the styles related to the Public controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#site-header {
+  margin-bottom: 20px;
+  background-color: #eee;
+  height: 175px;
+  position: relative;
+}
+
+#site-header-title {
+  margin: 0 5px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+#content {
+  h2 {
+    font-size: 1.7em;
+  }
+  .section {
+    border: 1px solid #eee;
+    box-shadow: 5px 5px #eee;
+  }
+}
+
+#site-footer {
+  background-color: #eee;
+  text-align: center;
+  font-size: 0.8rem;
+}
