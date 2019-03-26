@@ -1,23 +1,23 @@
 <%= error_messages_for(f.object) %>
 <div class="form-group row">
-  <%= f.label(:name, nil, class:"col-sm-2 col-form-label" ) %>
-  <div class="col-sm-10">
-    <%= f.text_field(:name, ) %>
+  <%= f.label(:name, nil, class:"col-12 col-sm-2 col-form-label" ) %>
+  <div class="col-12 col-sm-10">
+    <%= f.text_field(:name, class: 'form-control form-control-sm') %>
   </div>
 </div>
 <div class="form-group row">
-  <%= f.label(:position, nil, class:"col-sm-2 col-form-label" ) %>
-  <div class="col-sm-10">
+  <%= f.label(:position, nil, class:"col-12 col-sm-2 col-form-label" ) %>
+  <div class="col col-sm-10">
     <%= f.select(:position, 1..@subject_count) %>
   </div>
 </div>
 <div class="form-group row">
-  <div class="col-sm-2">
+  <div class="col-12 col-sm-2">
       <%= f.label(:visible, class:"form-check-label" ) %>
   </div>
-  <div class="col-sm-10">
+  <div class="col-12 col-sm-10">
     <div class="form-check">
-      <%= f.check_box(:visible, class:'form-check-input') %>
+      <%= f.check_box(:visible, class:'form-check-input m-0') %>
     </div>
   </div>
 </div>

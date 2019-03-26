@@ -1,34 +1,42 @@
 <% @page_title = "All Pages" %>
-<%= link_to("<< Back to Subjects", subjects_path)%>
-<div class="pages index">
-  <h2>Pages</h2>
-  <%= link_to("Add New Page", new_page_path(:subject_id => @subject.id), :class => 'action new') %>
-  <table>
-    <thead class="header">
-      <th>#</th>
-      <th>Subject ID</th>
-      <th>Page</th>
-      <th>Permalink</th>
-      <th>Visible</th>
-      <th>Sections</th>
-      <th>Actions</th>
+<div class="row admin-header">
+  <div class="col-12">
+    <h2>Pages</h2>
+  </div>
+  <div class="col-6">
+    <%= link_to(fa_icon("arrow-left", text: 'Back to Subjects'), subjects_path, :class => 'back-link')%>
+  </div>
+  <div class="col-6">
+    <%= link_to(fa_icon("plus", text: 'Add New Page'), new_page_path(:subject_id => @subject.id), :class => 'action new') %>
+  </div>
+</div>
+<div class="table-responsive index">
+  <table class="table table-sm table-hover">
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">Subject ID</th>
+      <th scope="col">Page</th>
+      <th scope="col">Permalink</th>
+      <th scope="col">Visible</th>
+      <th scope="col">Sections</th>
+      <th scope="col">Actions</th>
     </thead>
-
-  <% @pages.each do |page| %>
-  <tr>
-    <td><%= page.position %></td>
-    <td><%= page.subject_id %></td>
-    <td><%= page.permalink %></td>
-    <td><%= page.name %></td>
-    <td class="center"><%= status_tag(page.visible) %></td>
-    <td class="center"><%= page.sections.size %></td>
-    <td class="actions">
-      <%= link_to("View Sections", sections_path(:page_id => page.id)) %>
-      <%= link_to("Show", page_path(page, :subject_id => @subject.id), :class => "action show") %>
-      <%= link_to("Edit", edit_page_path(page, :subject_id => @subject.id), :class => "action edit") %>
-      <%= link_to("Delete", delete_page_path(page, :subject_id => @subject.id), :class => "action delete") %>
-    </td>
-  </tr>
+  <tbody>
+    <% @pages.each do |page| %>
+    <tr>
+      <th scope="row"><%= page.position %></td>
+      <td><%= page.subject_id %></td>
+      <td><%= page.permalink %></td>
+      <td><%= page.name %></td>
+      <td><%= status_tag(page.visible) %></td>
+      <td><%= link_to(fa_icon("binoculars", text:'View Sections'), sections_path(:page_id => page.id)) %> <span class="badge badge-dark"><%= page.sections.size %> </span></td>
+      <td class="actions">
+        <%= link_to(fa_icon("eye"), page_path(page, :subject_id => @subject.id), :class => "action show") %>
+        <%= link_to(fa_icon("pencil"), edit_page_path(page, :subject_id => @subject.id), :class => "action edit") %>
+        <%= link_to(fa_icon("trash"), delete_page_path(page, :subject_id => @subject.id), :class => "action delete") %>
+      </td>
+    </tr>
+  </tbody>
   <% end %>
 </table>
 </div>

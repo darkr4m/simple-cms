@@ -1,3 +1,36 @@
 // Place all the styles related to the Subjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.admin-header {
+  padding: 10px;
+  text-align: center;
+  a {
+    font-size: 0.9rem;
+  }
+  .back-link {
+    float: right;
+  }
+  .new {
+    float: left;
+  }
+}
+
+.index {
+  text-align: center;
+  a {
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.create {
+  padding: 20px;
+  margin: 5% auto;
+  max-width: 90%;
+  border: 1px solid #eee;
+  .header {
+    text-align: center;
+  }
+}

@@ -1,31 +1,39 @@
 <% @page_title = "All Sections" %>
-<%= link_to("<< Back to Pages", pages_path(:subject_id => @page.subject_id), :class => 'back-link') %>
-<div class="sections index">
-  <h2>Sections</h2>
-  <%= link_to("Add New Section", new_section_path(:page_id => @page.id), :class => 'action new') %>
-
-    <table>
-      <thead class="header">
-        <th>#</th>
-        <th>Page ID</th>
-        <th>Section</th>
-        <th>Visible</th>
-        <th>Actions</th>
+<div class="row admin-header">
+  <div class="col-12">
+    <h2>Sections</h2>
+  </div>
+  <div class="col-6">
+    <%= link_to(fa_icon("arrow-left", text: 'Back to Pages'), pages_path(:subject_id => @page.subject_id), :class => 'back-link') %>
+  </div>
+  <div class="col-6">
+    <%= link_to(fa_icon("plus", text: 'Add New Page'), new_section_path(:page_id => @page.id), :class => 'action new') %>
+  </div>
+</div>
+<div class="table-responsive index">
+    <table class="table table-sm table-hover">
+      <thead>
+        <th scope="col">#</th>
+        <th scope="col">Page ID</th>
+        <th scope="col">Section</th>
+        <th scope="col">Visible</th>
+        <th scope="col">Actions</th>
       </thead>
-
-      <% @sections.each do |section| %>
+      <tbody>
+        <% @sections.each do |section| %>
         <tr>
-          <td><%= section.position %></td>
+          <th scope="row"><%= section.position %></td>
           <td><%= section.page_id %></td>
           <td><%= section.name %></td>
           <td class="center"><%= status_tag(section.visible)%></td>
           <td class="actions">
-            <%= link_to("Show", section_path(section, :page_id => @page.id), :class => "action show") %>
-            <%= link_to("Edit", edit_section_path(section, :page_id => @page.id), :class => "action edit") %>
-            <%= link_to("Delete", delete_section_path(section, :page_id => @page.id), :class => "action delete") %>
+            <%= link_to(fa_icon("eye"), section_path(section, :page_id => @page.id), :class => "action show") %>
+            <%= link_to(fa_icon("pencil"), edit_section_path(section, :page_id => @page.id), :class => "action edit") %>
+            <%= link_to(fa_icon("trash"), delete_section_path(section, :page_id => @page.id), :class => "action delete") %>
           </td>
         </tr>
-      <% end %>
+        <% end %>
+      </tbody>
     </table>
 
 
