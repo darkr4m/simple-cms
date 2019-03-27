@@ -1,28 +1,32 @@
 <% @page_title = "#{@subject.name}" %>
-<%= link_to("<< Back to list", subjects_path, :class => 'back-link') %>
 
-<div class="subjects show">
-  <h2>Show Subject</h2>
-  <table summary="Subject detail view">
-    <tr>
-      <th>Name</th>
-      <td><%= @subject.name %></td>
-    </tr>
-    <tr>
-      <th>Position</th>
-      <td><%= @subject.position %></td>
-    </tr>
-    <tr>
-      <th>Visible?</th>
-      <td><%= status_tag(@subject.visible) %></td>
-    </tr>
-    <tr>
-      <th>Created</th>
-      <td><%= @subject.created_at.to_s(:long) %></td>
-    </tr>
-    <tr>
-      <th>Updated</th>
-      <td><%= @subject.updated_at.to_s(:long) %></td>
-    </tr>
-  </table>
+<div class="action-wrap">
+  <div class="header">
+    <h2>Show Subject</h2>
+    <%= link_to(fa_icon("arrow-left", text: 'Back to List'), subjects_path, :class => 'back-link') %>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm" summary="Subject detail view">
+      <tr>
+        <th scope="row">Name</th>
+        <td><%= @subject.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Position</th>
+        <td><%= @subject.position %></td>
+      </tr>
+      <tr>
+        <th scope="row">Visible?</th>
+        <td><%= status_tag(@subject.visible) %></td>
+      </tr>
+      <tr>
+        <th scope="row">Created</th>
+        <td><%= @subject.created_at.to_s(:long) %></td>
+      </tr>
+      <tr>
+        <th scope="row">Updated</th>
+        <td><%= @subject.updated_at.to_s(:long) %></td>
+      </tr>
+    </table>
+  </div>
 </div>

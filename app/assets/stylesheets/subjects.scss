@@ -25,12 +25,51 @@
   }
 }
 
-.create {
+.action-wrap {
   padding: 20px;
   margin: 5% auto;
   max-width: 90%;
   border: 1px solid #eee;
   .header {
     text-align: center;
+    margin-bottom: 20px;
+  }
+  .form-container {
+    border: 1px solid #eee;
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .form-submit {
+    margin-top: 10px;
+  }
+  .delete-reference {
+    text-align: center;
+    border: 0;
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: red;
+    }
+    p {
+      font-weight: 700;
+    }
+  }
+  table {
+    margin: 0 auto;
+    max-width: 350px;
+    border: 1px solid #eee;
+    th {
+      text-align: right;
+    }
+    td {
+      text-align: center;
+    }
+  }
+  .section {
+    max-width: 90%;
+    th {
+      max-width: 50px;
+    }
   }
 }

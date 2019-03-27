@@ -1,41 +1,45 @@
 <% @page_title = "#{@page.name}" %>
 
-<%= link_to("<< Back to list", pages_path(:subject_id => @subject.id), :class => 'back-link') %>
 
-<div class="pages show">
-  <h2>Show Page</h2>
-  <table summary="Page detail view">
-    <tr>
-      <th>Subject ID</th>
-      <td><%= @page.subject_id %></td>
-    </tr>
-    <tr>
-      <th>Name</th>
-      <td><%= @page.name %></td>
-    </tr>
-    <tr>
-      <th>Position</th>
-      <td><%= @page.position %></td>
-    </tr>
-    <tr>
-      <th>Permalink</th>
-      <td><%= @page.permalink %></td>
-    </tr>
-    <tr>
-      <th>Sections</th>
-      <td><%= @page.sections.size %></td>
-    </tr>
-    <tr>
-      <th>Visible?</th>
-      <td><%= status_tag(@page.visible) %></td>
-    </tr>
-    <tr>
-      <th>Created</th>
-      <td><%= @page.created_at.to_s(:long) %></td>
-    </tr>
-    <tr>
-      <th>Updated</th>
-      <td><%= @page.updated_at.to_s(:long) %></td>
-    </tr>
-  </table>
+<div class="action-wrap">
+  <div class="header">
+    <h2>Show Page</h2>
+    <%= link_to(fa_icon("arrow-left", text: 'Back to List'), pages_path(:subject_id => @subject.id), :class => 'back-link') %>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-sm" summary="Page detail view">
+      <tr>
+        <th scope="row">Subject ID</th>
+        <td><%= @page.subject_id %></td>
+      </tr>
+      <tr>
+        <th scope="row">Name</th>
+        <td><%= @page.name %></td>
+      </tr>
+      <tr>
+        <th scope="row">Position</th>
+        <td><%= @page.position %></td>
+      </tr>
+      <tr>
+        <th scope="row">Permalink</th>
+        <td><%= @page.permalink %></td>
+      </tr>
+      <tr>
+        <th scope="row">Sections</th>
+        <td><%= @page.sections.size %></td>
+      </tr>
+      <tr>
+        <th scope="row">Visible?</th>
+        <td><%= status_tag(@page.visible) %></td>
+      </tr>
+      <tr>
+        <th scope="row">Created</th>
+        <td><%= @page.created_at.to_s(:long) %></td>
+      </tr>
+      <tr>
+        <th scope="row">Updated</th>
+        <td><%= @page.updated_at.to_s(:long) %></td>
+      </tr>
+    </table>
+  </div>
 </div>

@@ -1,14 +1,16 @@
 <% @page_title = "Add New Subject" %>
 
-<div class="create">
+<div class="action-wrap">
   <div class="header">
     <h2>Create Subject</h2>
     <%= link_to(fa_icon("arrow-left", text: 'Back to List'), subjects_path, :class => 'back-link') %>
   </div>
-  <%= form_for(@subject, :url => subjects_path, :method => 'post') do |f| %>
+  <div class="form-container">
+    <%= form_for(@subject, :url => subjects_path, :method => 'post') do |f| %>
     <%= render(:partial => 'form', :locals => {:f => f}) %>
-    <div class="text-center">
-        <%= f.submit("Create Subject", class:"btn btn-primary") %>
+  </div>
+    <div class="form-submit text-center">
+      <%= f.submit("Create Subject", class:"btn btn-primary") %>
     </div>
-  <% end %>
+    <% end %>
 </div>

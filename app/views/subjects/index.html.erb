@@ -27,9 +27,9 @@
         <td><%= status_tag(subject.visible) %></td>
         <td><%= link_to(fa_icon("binoculars", text:'View Pages'), pages_path(:subject_id => subject.id), :class => "action view") %> <span class="badge badge-dark"><%= subject.pages.size %> </span></td>
         <td class="actions">
-          <%= link_to(fa_icon("eye"), subject_path(subject), :class => "action show") %>
-          <%= link_to(fa_icon("pencil"), edit_subject_path(subject), :class => "action edit") %>
-          <%= link_to(fa_icon("trash"), delete_subject_path(subject), :class => "action delete") %>
+          <%= link_to(fa_icon("eye"), subject_path(subject), :class => "action-show") %>
+          <%= link_to(fa_icon("pencil"), edit_subject_path(subject), :class => "action-edit") %>
+          <%= link_to(fa_icon("trash"), delete_subject_path(subject), :class => "action-delete") %>
         </td>
       </tr>
       <% end %>
