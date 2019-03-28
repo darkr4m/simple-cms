@@ -1,12 +1,16 @@
 <% @page_title = "Edit Page" %>
-<%= link_to("<< Back to list", pages_path(:subject_id => @subject.id), :class => 'back-link') %>
 
-<div class="pages edit">
-  <h2>Edit Page</h2>
-  <%= form_for(@page, :url => page_path(@page, :subject_id => @subject.id), :method => 'patch') do |f| %>
-  <%= render(:partial => 'form', :locals => {:f => f}) %>
-    <div class="form-buttons">
-      <%= f.submit("Edit Page") %>
+<div class="action-wrap">
+  <div class="header">
+    <h2>Edit Page</h2>
+    <%= link_to(fa_icon("arrow-left", text: 'Back to List'), pages_path(:subject_id => @subject.id), :class => 'back-link') %>
+  </div>
+  <div class="form-container">
+    <%= form_for(@page, :url => page_path(@page, :subject_id => @subject.id), :method => 'patch') do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+  </div>
+    <div class="form-submit text-center">
+      <%= f.submit("Edit Page", class:"btn btn-primary") %>
     </div>
   <% end %>
 </div>

@@ -1,12 +1,16 @@
 <% @page_title = "Add New Section" %>
-<%= link_to("<< Back to list", sections_path(:page_id => @page.id), :class => 'back-link') %>
 
-<div class="section new">
-  <h2>Create Section</h2>
-  <%= form_for(@section, :url => sections_path(:page_id => @page.id)) do |f| %>
+<div class="action-wrap">
+  <div class="header">
+    <h2>Create Section</h2>
+    <%= link_to(fa_icon("arrow-left", text: 'Back to List'), sections_path(:page_id => @page.id), :class => 'back-link') %>
+  </div>
+  <div class="form-container section">
+    <%= form_for(@section, :url => sections_path(:page_id => @page.id)) do |f| %>
     <%= render(:partial => 'form', :locals => {:f => f}) %>
-    <div class="form-buttons">
-      <%= f.submit("Create Section") %>
+  </div>
+    <div class="form-submit text-center">
+      <%= f.submit("Create Section", class:"btn btn-primary") %>
     </div>
   <% end %>
 </div>

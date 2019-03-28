@@ -4,7 +4,6 @@
   <div class="header">
     <h2>Delete Subject</h2>
     <%= link_to(fa_icon("arrow-left", text: 'Back to List'), subjects_path, :class => 'back-link') %>
-
   </div>
   <div class="form-container delete-reference">
     <%= form_for(@subject, :url => subject_path(@subject), :method => 'delete') do |f| %>
