@@ -7,10 +7,8 @@
   </div>
   <div class="form-container">
     <%= form_for(@page, :url => pages_path(:subject_id => @subject.id)) do |f| %>
-    <%= render(:partial => 'form', :locals => {:f => f}) %>
+      <%= render(:partial => 'form', :locals => {:f => f}) %>
+      <%= f.submit("Create Page", class:"btn btn-primary") %>
+      <% end %>
   </div>
-  <div class="form-submit text-center">
-    <%= f.submit("Create Page", class:"btn btn-primary") %>
-  </div>
-  <% end %>
 </div>

@@ -1,13 +1,14 @@
 <% @page_title = "New Admin User" %>
 
-<%= link_to("<< Back to list", admin_users_path, :class => 'back-link') %>
-
-<div class="admin-users new">
-  <h2>Create New Admin User</h2>
-  <%= form_for(@admin_user) do |f| %>
+<div class="action-wrap">
+  <div class="header">
+    <h2>Create New Admin User</h2>
+    <%= link_to("<< Back to list", admin_users_path, :class => 'back-link') %>
+  </div>
+  <div class="form-container">
+    <%= form_for(@admin_user) do |f| %>
     <%= render(:partial => 'form', :locals => {:f => f}) %>
-    <div class="form-buttons">
-      <%= f.submit("Create New Admin User") %>
-    </div>
-  <% end %>
+    <%= f.submit("Create New Admin User", class:"btn btn-primary") %>
+    <% end %>
+  </div>
 </div>

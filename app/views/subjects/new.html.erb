@@ -8,9 +8,7 @@
   <div class="form-container">
     <%= form_for(@subject, :url => subjects_path, :method => 'post') do |f| %>
     <%= render(:partial => 'form', :locals => {:f => f}) %>
-  </div>
-    <div class="form-submit text-center">
-      <%= f.submit("Create Subject", class:"btn btn-primary") %>
-    </div>
+    <%= f.submit("Create Subject", class:"btn btn-primary") %>
     <% end %>
+  </div>
 </div>

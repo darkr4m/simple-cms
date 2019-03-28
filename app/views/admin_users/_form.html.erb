@@ -1,23 +1,32 @@
 <%= error_messages_for(f.object) %>
-<table summary="Admin User form fields">
-  <tr>
-    <th><%= f.label(:first_name) %></th>
-    <td><%= f.text_field(:first_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:last_name) %></th>
-    <td><%= f.text_field(:last_name) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:email) %></th>
-    <td><%= f.text_field(:email) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:username) %></th>
-    <td><%= f.text_field(:username) %></td>
-  </tr>
-  <tr>
-    <th><%= f.label(:passsword) %></th>
-    <td><%= f.password_field(:passsword) %></td>
-  </tr>
-</table>
+
+<div class="form-group row">
+  <%= f.label(:first_name, nil, class:"col-12 col-sm-3 col-form-label" ) %>
+  <div class="col-12 col-sm-9">
+    <%= f.text_field(:first_name, class: 'form-control form-control-sm') %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label(:last_name, nil, class:"col-12 col-sm-3 col-form-label" ) %>
+  <div class="col-12 col-sm-9">
+    <%= f.text_field(:last_name, class: 'form-control form-control-sm') %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label(:email, nil, class:"col-12 col-sm-3 col-form-label" ) %>
+  <div class="col-12 col-sm-9">
+    <%= f.text_field(:email, class: 'form-control form-control-sm') %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label(:username, nil, class:"col-12 col-sm-3 col-form-label" ) %>
+  <div class="col-12 col-sm-9">
+    <%= f.text_field(:username, class: 'form-control form-control-sm') %>
+  </div>
+</div>
+<div class="form-group row">
+  <%= f.label(:password, nil, class:"col-12 col-sm-3 col-form-label" ) %>
+  <div class="col-12 col-sm-9">
+    <%= f.password_field(:password, class: 'form-control form-control-sm') %>
+  </div>
+</div>

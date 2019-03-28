@@ -8,9 +8,8 @@
   <div class="form-container">
   <%= form_for(@subject, :url => subject_path(@subject), :method => 'patch') do |f| %>
     <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <%= f.submit("Edit Subject", class:"btn btn-primary") %>
+    <% end %>
   </div>
-    <div class="form-submit text-center">
-      <%= f.submit("Edit Subject", class:"btn btn-primary") %>
-    </div>
-  <% end %>
+
 </div>

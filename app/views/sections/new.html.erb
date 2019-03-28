@@ -8,9 +8,7 @@
   <div class="form-container section">
     <%= form_for(@section, :url => sections_path(:page_id => @page.id)) do |f| %>
     <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <%= f.submit("Create Section", class:"btn btn-primary") %>
+    <% end %>
   </div>
-    <div class="form-submit text-center">
-      <%= f.submit("Create Section", class:"btn btn-primary") %>
-    </div>
-  <% end %>
 </div>

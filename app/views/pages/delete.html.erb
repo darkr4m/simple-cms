@@ -9,9 +9,8 @@
   <%= form_for(@page, :url => page_path(@page, :subject_id => @subject.id), :method => 'delete') do |f| %>
     <h4>Are you sure you want to permanently delete this page?</h4>
     <p><%= f.object.name %></p>
+    <%= f.submit("Delete Page", class:"btn btn-danger") %>
+    <% end %>
   </div>
-    <div class="form-submit text-center">
-      <%= f.submit("Delete Page", class:"btn btn-danger") %>
-    </div>
-  <% end %>
+
 </div>
